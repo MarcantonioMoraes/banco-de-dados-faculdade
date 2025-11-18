@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { FaculdadeController } from "../controller/FaculdadeController";
+// Importa as definições do Swagger (não é usado no código, mas o swagger-jsdoc lê os comentários)
+import "../config/swagger.routes.config";
 
 const router = Router()
 const faculdadeController = new FaculdadeController();

@@ -1,10 +1,14 @@
 import express from "express";
 import faculdadeRoutes from "./routes/FaculdadeRoutes";
 import { AppDataSource } from "./database";
+import { setupSwagger } from "./swagger";
 
 const app = express();
 app.use(express.json());
 app.use("/faculdade", faculdadeRoutes);
+
+// Monta o Swagger UI em /docs
+setupSwagger(app);
 
 AppDataSource.initialize()
     .then(() => {
